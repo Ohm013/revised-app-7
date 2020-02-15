@@ -53,13 +53,21 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 
 }
+	var allergyPercent=0
+	var coldPercent=0
+	function results(){
+		var allergyPercent= allergy_count/ (allergy_count + cold_count) * 100
+		var coldPercent= cold_count/ (allergy_count+ cold_count)* 100;
+		var resultText = document.getElementId("results");
+		resultText.innerHTML = "Probability it is allergies = "allergyPercent + "%<b> Probability it is a cold =" + 
+		
 function resultPercentage() {
 		       car allergyPercentage = allergy_count / 6 *100;
 		       alert(allergyPercentage); 
 		       var coldPercentage = cold_count /6 *100
 		       alert (coldPercentage); 
 		       var resultText = document.getElementById("results");
-		       resultText.innerHTML = "Percent it's likely allergies =" = allergy_count /6 *100 + "<b>
+		       resultText.innerHTML = "Percent it's likely allergies =" = allergy_count /6 *100 + "<b> 
 }
   </script>
 </head>
@@ -154,12 +162,12 @@ function resultPercentage() {
 		<h1>View Results</h1>
 	</div>
 	<div id="content" class="w3-container">
-	<a href="#six" onclick="results();" class="w3-btn w3-purple w3-round"> Click here for results </a> <!-- Added code for results-->
+	<a href="#six" onclick="results();" class="w3-btn w3-purple w3-round"> Click here for results </a> <!-- Added code for results at the top of page--> 
 		
 <div class="page" id="six">
 	<div id="header" class="w3-container" w3-flat-carrot">
 		<h1>Your Results!</h1>
-	<p id="results"></p>
+	<p id="results"></p> 
 		       
 
 <p> Page 6 </p>
