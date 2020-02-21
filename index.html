@@ -7,7 +7,7 @@ THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.
  
 Authors in chronological order of contribution:
 Tim Riedel
-Author 2
+Ohm Patel
  
 Further Information:
 http://cns.utexas.edu/fri
@@ -20,14 +20,14 @@ Brief Description of Goal of Code:
 To diagnose between an allergy and cold
  
 Known Issues:
-blah, blah, blah, blah
+The results page does not have a footer or header
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
 	
    <head> 
-      <title>Cold or Allergy</title>  
+      <title>Cold or Allergy</title> <!--changed the title-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -39,7 +39,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         
 	var allergy_count = 0;
         var cold_count = 0;
-	var resultText = document.getElementById("results");
+	var resultText = document.getElementById("results"); //establishes the variables//
 	
         function allergyAdd(){
             	allergy_count = allergy_count + 1;
@@ -56,7 +56,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		allergyPercent= allergy_count/ (allergy_count + cold_count) * 100;
 		coldPercent= cold_count/ (allergy_count + cold_count) * 100;
 		var resultText = document.getElementById("results");
-		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%"; 
+		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%"; //added the math for the results section up here//
 		
 	}
 </script>
@@ -99,7 +99,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
-<div class="page" id="one">
+<div class="page" id="one"> <!--added new page-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
@@ -111,7 +111,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	</div>
 </div>
 
-<div class="page" id="two">
+<div class="page" id="two"> <!--added page two-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
@@ -123,7 +123,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 	</div>	
 
-<div class="page" id="three">
+<div class="page" id="three"> <!--added page three-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
@@ -133,7 +133,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no and allergy-->
 	</div>
 	
-<div class="page" id="four">
+<div class="page" id="four"> <!--added page 4-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
@@ -143,7 +143,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<a href="#five" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Chronic </a> <!-- Added code for chronic and cold-->
 	</div>
 	
-<div class="page" id="five">
+<div class="page" id="five"> <!--added page 5-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>View Results</h1>
 	</div>
@@ -151,7 +151,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<a href="#six" onclick="results();" class="w3-btn w3-purple w3-round"> Click here for results </a> <!-- Added code for results at the top of page--> 
 	</div>	
 
-<div class="page" id="six">
+<div class="page" id="six"> <!--added results page-->
 	<div id="header" class="w3-container" w3-flat-carrot">
 	</div>
 		<h1>Results</h1>
