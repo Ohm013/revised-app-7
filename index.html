@@ -27,7 +27,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
    <head> 
-      <title>Hello World</title>  
+      <title>Cold or Allergy</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -39,7 +39,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         
 	var allergy_count = 0;
         var cold_count = 0;
-	var resultText = document.getElementId("results");
+	var resultText = document.getElementById("results");
 	
         function allergyAdd(){
             	allergy_count = allergy_count + 1;
@@ -49,14 +49,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function coldAdd(){
             	cold_count = cold_count + 1;
         
-	
 	}
 	var allergyPercent=0;
 	var coldPercent=0;
 	function results(){
-		allergyPercent= allergy_count/(allergy_count + cold_count) * 100;
-		coldPercent= cold_count/ (allergy_count + cold_count)* 100;
-		var resultText = document.getElementId("results");
+		allergyPercent= allergy_count/ (allergy_count + cold_count) * 100;
+		coldPercent= cold_count/ (allergy_count + cold_count) * 100;
+		var resultText = document.getElementById("results");
 		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%"; 
 		
 	}
