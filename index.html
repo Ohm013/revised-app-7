@@ -38,12 +38,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
-
-
+	var allergyPercent = 0;
+	var coldPercent = 0;
+		var resultText = document.getElementId("results");
+	
         function allergyAdd(){
             allergy_count = allergy_count + 1;
-		alert(allergy_count);
-
+		
         }
 
         function coldAdd(){
@@ -53,21 +54,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	
 
 }
-	var allergyPercent=0
-	var coldPercent=0
+	
 	function results(){
-		var allergyPercent= allergy_count/ (allergy_count + cold_count) * 100
-		var coldPercent= cold_count/ (allergy_count+ cold_count)* 100;
+		allergyPercent= (allergy_count/4) * 100;
+		coldPercent= (cold_count/4)* 100;
 		var resultText = document.getElementId("results");
-		resultText.innerHTML = "Probability it is allergies = "allergyPercent + "%<b> Probability it is a cold =" + 
+		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "<br> Probability it is a cold = " + coldPercent; 
 		
-function resultPercentage() {
-		       car allergyPercentage = allergy_count / 4 *100;
-		       alert(allergyPercentage); 
-		       var coldPercentage = cold_count /4 *100
-		       alert (coldPercentage); 
-		       var resultText = document.getElementById("results");
-		       resultText.innerHTML = "Percent it's likely allergies =" = allergy_count /6 *100 + "<b> 
+
 }
   </script>
 </head>
@@ -167,6 +161,8 @@ function resultPercentage() {
 <div class="page" id="six">
 	<div id="header" class="w3-container" w3-flat-carrot">
 		<h1>Your Results!</h1>
+	</div>
+	<div id="content" class="w3-container">
 	<p id="results"></p> 
 		       
 
