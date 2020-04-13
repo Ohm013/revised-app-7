@@ -27,7 +27,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 -->
 	
    <head> 
-      <title>Cold or Allergy</title> <!--changed the title-->
+      <title>Diagnosis for respiratory illness</title> <!--changed the title-->
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
@@ -36,30 +36,32 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 	<script>
-        
-	var allergy_count = 0;
-        var cold_count = 0;
+        var flu_count = 0; //added flu variable and results will begin at 0//
+	var covid_count = 0; //added covid variable and the results will begin at 0//
+		var allergy_count = 0;//allergy variable and results will begin at 0//
+       		var cold_count = 0; //cold variable and results will begin at 0//
 	var resultText = document.getElementById("results"); //establishes the variables//
 	
+	function covidAdd(){
+		covid_count = covid_count + 1; //this adds to the covid count//
+		
+	}
+		
         function allergyAdd(){
-            	allergy_count = allergy_count + 1;
+            	allergy_count = allergy_count + 1; //this adds to the allergy count//
 		
         }
 
         function coldAdd(){
-            	cold_count = cold_count + 1;
+            	cold_count = cold_count + 1; //this function adds to the cold count//
 		
 		
 	function fluAdd(){
-		flu_count = flu_count + 1;
+		flu_count = flu_count + 1; //this function adds to the flu count//
 		
 	}
 	
-	function covidAdd(){
-		covid_count = covid_count + 1;
-		
-	}
-        
+
 	}
 	var allergyPercent=0;
 	var coldPercent=0;
@@ -98,11 +100,11 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Cold or Allergies?</h1>
+	<h1>Cold, Allergies, Flu, or Covid?</h1> <!--changed the title of the app name-->
 </div>
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
+	<p>Are you feeling like you might have a cold but wonder if it is covid. Answer a few short questions to find out!</p> <!--added a header to the app-->
 	
 	<a href="#one" class="w3-btn w3-purple w3-round"> Get Started </a>
 	
@@ -111,50 +113,103 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
 <div class="page" id="one"> <!--added new page-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 1</h1>
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header of page one-->
+		<h1>Question 1</h1> <!--header for first question-->
 	</div>
 	
     	<div id="content" class="w3-container">
-        	<p> Are your eyes itchy or watery?</p>   
-	<a href="#two" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!--Added code for button Yes and allergy-->
-	<a href="#two" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> No </a> <!--Added code for button No and cold-->
+        	<p> Do you have shortness of breath?</p> <!--question 1-->
+	<a href="#two" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!--Added code for button Yes and adds point to covid-->
+	<a href="#two" onclick="coldAdd(); fluAdd(); allergyAdd();" class="w3-btn w3-purple w3-round"> No </a> <!--Added code for button No and cold, flu, and allergy-->
     	</div>
 </div>
 
 <div class="page" id="two"> <!--added page two-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 2</h1>
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header of page two-->
+		<h1>Question 2</h1> <!--header for second question-->
 	</div>
 	<div id="content" class="w3-container">
-	<p>Do you have a fever?</p>
-	<a href="#three" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and cold -->
+		<p>Do you have a fever?</p> <!--question 2-->
+	<a href="#three" onclick="coldAdd(); covidAdd(); fluAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and cold, flu, and covid -->
 	<a href="#three" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no and allergy-->
 	</div>
 
 	</div>	
 
 <div class="page" id="three"> <!--added page three-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header of page three-->
+		<h1>Question 3</h1> <!--header for third question-->
 	</div>
 	<div id="content" class="w3-container">
-	<p>Do you have a sore throat?</p>
-	<a href="#four" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and cold-->
+		<p>Do you have a sore throat?</p> <!--question 3-->
+	<a href="#four" onclick="coldAdd(); covidAdd(); fluAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and cold, covid, and flu-->
 	<a href="#four" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no and allergy-->
 	</div>
 	
 <div class="page" id="four"> <!--added page 4-->
-	<div id="header" class="w3-container w3-flat-carrot">
-		<h1>Question 4</h1>
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header for fourth page-->
+		<h1>Question 4</h1> <!--header for fourth question-->
 	</div>
 	<div id="content" class="w3-container">
-	<p>Are your symptons seasonal or chronic?</p>
-	<a href="#five" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> Seasonal </a> <!-- Added code for seasonal and allergy-->
-	<a href="#five" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> Chronic </a> <!-- Added code for chronic and cold-->
+		<p>Do you have a runny/stuffy nose?</p> <!--question 4-->
+	<a href="#five" onclick="coldAdd(); fluAdd(); allergyAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and cold, flu, and allergy-->
+	<a href="#five" onclick="covidAdd();" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no and covid-->
 	</div>
 	
 <div class="page" id="five"> <!--added page 5-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header for fifth page-->
+		<h1>Question 5</h1> <!--header for fifth question-->
+	</div>
+	<div id="content" class="w3-container">
+		<p>Do you have headaches?</p> <!--question 5-->
+	<a href="#five" onclick="covidAdd(); fluAdd(); allergyAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and covid, flu, and allergy-->
+	<a href="#five" onclick="coldAdd();" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no and cold-->
+	</div>
+	
+<div class="page" id="six"> <!--added page 6-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header for sixth page-->
+		<h1>Question 6</h1> <!--header for sixth question-->
+	</div>
+	<div id="content" class="w3-container">
+		<p>Do you have a cough?</p> <!--question 6-->
+	<a href="#six" onclick="covidAdd(); fluAdd(); coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and covid, flu, and cold-->
+	<a href="#six" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no and allergy-->
+	</div>
+	
+<div class="page" id="seven"> <!--added page 7-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header for seventh page-->
+		<h1>Question 7</h1> <!--header for seventh question-->
+	</div>
+	<div id="content" class="w3-container">
+		<p>Are you having body aches/pain?</p> <!--question 7-->
+	<a href="#seven" onclick="covidAdd(); fluAdd(); coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and covid, flu, and cold-->
+	<a href="#seven" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no and allergy-->
+	</div>
+	
+<div class="page" id="eight"> <!--added page 8-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header for eighth page-->
+		<h1>Question 8</h1> <!--header for eighth question-->
+	</div>
+	<div id="content" class="w3-container">
+		<p>Are you coughing?</p> <!--question 8-->
+	<a href="#eight" onclick="covidAdd(); fluAdd(); coldAdd();" class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and covid, flu, and cold-->
+	<a href="#eight" onclick="allergyAdd();" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no and allergy-->
+	</div>
+	
+<div class="page" id="nine"> <!--added page 9-->
+	<div id="header" class="w3-container w3-flat-carrot"> <!--header for ninth page-->
+		<h1>Question 9</h1> <!--header for ninth question-->
+	</div>
+	<div id="content" class="w3-container">
+		<p>Are you feeling tired or weak?</p> <!--question 9-->
+	<a href="#nine" onclick="covidAdd(); fluAdd(); coldAdd(); allergyAdd(); " class="w3-btn w3-purple w3-round"> Yes </a> <!-- Added code for yes and covid, flu, allergy and cold-->
+	<a href="#nine" class="w3-btn w3-purple w3-round"> No </a> <!-- Added code for no-->
+	</div>
+	
+	
+	
+	
+<div class="page" id="six"> <!--added page 6-->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>View Results</h1>
 	</div>
