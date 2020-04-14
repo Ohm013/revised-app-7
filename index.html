@@ -68,10 +68,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	var fluPercent=0;
 	var covidPercent=0;
 	function results(){
-		allergyPercent= allergy_count/ (allergy_count + cold_count + flu_count + covid_count) * 100;
-		coldPercent= cold_count/ (allergy_count + cold_count + flu_count + covid_count) * 100;
-		fluPercent= flu_count/ (allergy_count + cold_count + flu_count + covid_count) * 100;
-		covidPercent= covid_count/ (allergy_count + cold_count + flu_count + covid_count) * 100;
+		allergyPercent= allergy_count/ (allergy_count + cold_count + flu_count + covid_count) * 100; //this will find the percent for allergy//
+		coldPercent= cold_count/ (allergy_count + cold_count + flu_count + covid_count) * 100; //this will find the percent for a cold//
+		fluPercent= flu_count/ (allergy_count + cold_count + flu_count + covid_count) * 100; // this will find the percent for flu//
+		covidPercent= covid_count/ (allergy_count + cold_count + flu_count + covid_count) * 100; //this will find the percent for covid//
 		var resultText = document.getElementById("results");
 		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%<br>  Probability it is Covid = " + covidPercent + "%<br>  Probability it is flu = " + fluPercent + "%"; //added the math for the results section up here//
 		
