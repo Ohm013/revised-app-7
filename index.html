@@ -65,11 +65,15 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	}
 	var allergyPercent=0;
 	var coldPercent=0;
+	var fluPercent=0;
+	var covidPercent=0;
 	function results(){
-		allergyPercent= allergy_count/ (allergy_count + cold_count) * 100;
-		coldPercent= cold_count/ (allergy_count + cold_count) * 100;
+		allergyPercent= allergy_count/ (allergy_count + cold_count + flu_count + covid_count) * 100;
+		coldPercent= cold_count/ (allergy_count + cold_count + flu_count + covid_count) * 100;
+		fluPercent= flu_count/ (allergy_count + cold_count + flu_count + covid_count) * 100;
+		covidPercent= covid_count/ (allergy_count + cold_count + flu_count + covid_count) * 100;
 		var resultText = document.getElementById("results");
-		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%"; //added the math for the results section up here//
+		resultText.innerHTML = "Probability it is allergies = " + allergyPercent + "%<br> Probability it is a cold = " + coldPercent + "%<br>  Probability it is Covid = " + covidPercent + "%<br>  Probability it is flu = " + fluPercent + "%"; //added the math for the results section up here//
 		
 	}
 </script>
@@ -261,7 +265,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 		<p id="results"></p> 
 		       
 </div>
-	
+		<div id="content" class="w3-container">
+	<p>This page is supposed to present the results in a pie chart. Each piece of the pie will represent one of the four respiratory illnesses</p>
+						     
+	<p>function drawPieSlice(ctx,centerX, centerY, radius, startAngle, endAngle, color ){
+    ctx.fillStyle = color;
+    ctx.beginPath();
+    ctx.moveTo(centerX,centerY);
+    ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+    ctx.closePath();
+    ctx.fill();
+						      
+						      } This is the base code to start off the pie chart</p>
 	
 	
 		       
